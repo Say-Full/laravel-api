@@ -22,5 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::get("tes", [TesApi::class, 'getData']);
 
-// Route::get("list", [StudentController::class, 'list']);
-Route::get("list/{id}", [StudentController::class, 'getOne']);
+// Route::get("list", [StudentController::class, 'list']); // Tidak memiliki parameter
+// Route::get("list/{id}", [StudentController::class, 'getOne']); // Harus menerima nilai untuk parameter `id` dan jika tidak maka akan error
+Route::get("list/{id?}", [StudentController::class, 'getOne']); // `?` untuk membuat parameter tersebut opsional

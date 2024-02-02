@@ -12,8 +12,13 @@ class StudentController extends Controller
     //     return Student::all();
     // }
 
-    function getOne($id)
+    // function getOne($id)
+    // {
+    //     return Student::find($id);
+    // }
+
+    function getOne($id = null) // Nilai default untuk optional parameter
     {
-        return Student::find($id);
+        return $id ? Student::find($id) : Student::all();
     }
 }
