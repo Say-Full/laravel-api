@@ -21,4 +21,18 @@ class StudentController extends Controller
     {
         return $id ? Student::find($id) : Student::all();
     }
+
+    function add(Request $request)
+    {
+        $student = new Student;
+        $student->nama = $request->nama;
+        $result = $student->save();
+
+        if( $result ) {
+            return ["message" => "success"];
+        }
+        else {
+            return ["message" => "failed"];
+        }
+    }
 }
