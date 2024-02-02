@@ -29,3 +29,5 @@ Route::get("list/{id?}", [StudentController::class, 'getOne']); // `?` untuk mem
 Route::post("add_student", [StudentController::class, 'add']);
 
 Route::put("update_student", [StudentController::class, 'update']);
+
+Route::get("search/{name}", [StudentController::class, 'search']);

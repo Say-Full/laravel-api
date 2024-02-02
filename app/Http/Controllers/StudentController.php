@@ -49,4 +49,10 @@ class StudentController extends Controller
             return ["message" => "failed"];
         }
     }
+
+    function search($name)
+    {
+        // return Student::where("nama", $name)->get();
+        return Student::where("nama", "like", "%" . $name . "%")->get();
+    }
 }
