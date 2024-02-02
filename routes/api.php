@@ -27,3 +27,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("list/{id?}", [StudentController::class, 'getOne']); // `?` untuk membuat parameter tersebut opsional
 
 Route::post("add_student", [StudentController::class, 'add']);
+
+Route::put("update_student", [StudentController::class, 'update']);

@@ -35,4 +35,18 @@ class StudentController extends Controller
             return ["message" => "failed"];
         }
     }
+
+    function update(Request $req)
+    {
+        $student = Student::find($req->id);
+        $student->nama = $req->nama;
+        $result = $student->save();
+
+        if( $result ) {
+            return ["message" => "success"];
+        }
+        else {
+            return ["message" => "failed"];
+        }
+    }
 }
