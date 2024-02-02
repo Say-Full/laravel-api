@@ -7,8 +7,13 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    function list()
+    // function list()
+    // {
+    //     return Student::all();
+    // }
+
+    function list($id)
     {
-        return Student::all();
+        return Student::find($id);
     }
 }
