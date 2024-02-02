@@ -12,7 +12,7 @@ class StudentController extends Controller
     //     return Student::all();
     // }
 
-    function list($id)
+    function getOne($id)
     {
         return Student::find($id);
     }
