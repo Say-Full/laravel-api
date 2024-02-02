@@ -31,3 +31,5 @@ Route::post("add_student", [StudentController::class, 'add']);
 Route::put("update_student", [StudentController::class, 'update']);
 
 Route::get("search/{name}", [StudentController::class, 'search']);
+
+Route::delete("delete_student/{id}", [StudentController::class, 'delete']);

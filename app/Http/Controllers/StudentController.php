@@ -55,4 +55,17 @@ class StudentController extends Controller
         // return Student::where("nama", $name)->get();
         return Student::where("nama", "like", "%" . $name . "%")->get();
     }
+
+    function delete($id)
+    {
+        $student = Student::find($id);
+        $result = $student->delete();
+
+        if( $result ) {
+            return ["message" => "success"];
+        }
+        else {
+            return ["message" => "failed"];
+        }
+    }
 }
