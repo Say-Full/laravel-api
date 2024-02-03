@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TesApi;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +25,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::get("list", [StudentController::class, 'list']); // Tidak memiliki parameter
 // Route::get("list/{id}", [StudentController::class, 'getOne']); // Harus menerima nilai untuk parameter `id` dan jika tidak maka akan error
-Route::get("list/{id?}", [StudentController::class, 'getOne']); // `?` untuk membuat parameter tersebut opsional
+// Route::get("list/{id?}", [StudentController::class, 'getOne']); // `?` untuk membuat parameter tersebut opsional
 
-Route::post("add_student", [StudentController::class, 'add']);
+// Route::post("add_student", [StudentController::class, 'add']);
 
-Route::put("update_student", [StudentController::class, 'update']);
+// Route::put("update_student", [StudentController::class, 'update']);
 
-Route::get("search/{name}", [StudentController::class, 'search']);
+// Route::get("search/{name}", [StudentController::class, 'search']);
 
-Route::delete("delete_student/{id}", [StudentController::class, 'delete']);
+// Route::delete("delete_student/{id}", [StudentController::class, 'delete']);
+
+Route::apiResource("class", ClassController::class);
