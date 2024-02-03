@@ -6,6 +6,7 @@ use App\Http\Controllers\TesApi;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BerkasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,5 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 });
 
 Route::post("login", [UserController::class, 'login']);
+
+Route::post("upload_berkas", [BerkasController::class, 'uploadBerkas']);
