@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TesApi;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::delete("delete_student/{id}", [StudentController::class, 'delete']);
 
-Route::apiResource("class", ClassController::class);
+
+Route::group(['middleware' => 'auth:sanctum'], function() {
+    Route::apiResource("class", ClassController::class);
+});
+
+Route::post("login", [UserController::class, 'login']);
